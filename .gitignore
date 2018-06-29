@@ -1,1 +1,8 @@
-ranch-upload
+tmp/
+node_modules/
+.env
+
+sample.pic
+sample.mp4
+
+db.json

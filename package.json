@@ -1,0 +1,27 @@
+{
+  "name": "ranch-upload",
+  "version": "0.0.1",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ryanmjacobs/ranch-upload.git"
+  },
+  "author": "Ryan Jacobs",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ryanmjacobs/ranch-upload/issues"
+  },
+  "homepage": "https://github.com/ryanmjacobs/ranch-upload#readme",
+  "dependencies": {
+    "chokidar": "^2.0.4",
+    "dotenv": "^6.0.0",
+    "dropbox": "^4.0.7",
+    "fluent-ffmpeg": "^2.1.2",
+    "isomorphic-fetch": "^2.2.1",
+    "mkdirp": "^0.5.1"
+  }
+}
