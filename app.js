@@ -11,7 +11,7 @@ const chokidar = require("chokidar");
 
 const TMP_DIR = "tmp";
 //const FOOTAGE_DIRECTORY = "/tmp/samples";
-const FOOTAGE_DIRECTORY = "MediaDatabase";
+const FOOTAGE_DIRECTORY = PATH.join("M:", "MediaDatabase");
 
 console.log("dependencies loaded.");
 
@@ -30,13 +30,8 @@ chokidar.watch(FOOTAGE_DIRECTORY, {ignored: /(^|[\/\\])\../})
 async function process(path) {
     console.log("new file: " + path);
 
-    let root =
-        FOOTAGE_DIRECTORY[FOOTAGE_DIRECTORY.length-1] == "/"
-        ? FOOTAGE_DIRECTORY.slice(0, FOOTAGE_DIRECTORY.length-1)
-        : FOOTAGE_DIRECTORY;
-
     mkdirp.sync(TMP_DIR);
-    const dbx_path = path.replace(root, "").replace("pic", "mp4");
+    const dbx_path = path.replace(FOOTAGE_DIRECTORY, "").replace("pic", "mp4");
     mkdirp.sync(PATH.dirname(TMP_DIR + dbx_path));
 
     await compress(path, TMP_DIR + dbx_path);
