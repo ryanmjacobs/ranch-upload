@@ -23,7 +23,7 @@ chokidar.watch(FOOTAGE_DIRECTORY, {ignored: /(^|[\/\\])\../})
       console.log("ready.");
   })
   .on("add", path => {
-      if (READY && path.endsWith("_1"))
+      if (READY && path.includes("_1" + PATH.sep))
           process(path);
   });
 
