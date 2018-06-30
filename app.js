@@ -8,7 +8,8 @@ const compress = require("./lib/compress");
 const chokidar = require("chokidar");
 
 const TMP_DIR = "tmp";
-const FOOTAGE_DIRECTORY = "/tmp/samples";
+//const FOOTAGE_DIRECTORY = "/tmp/samples";
+const FOOTAGE_DIRECTORY = 'M:\MediaDatabase';
 
 /* sample upload
 const a = compress("sample.pic", "sample.mp4");
@@ -24,7 +25,7 @@ chokidar.watch(FOOTAGE_DIRECTORY, {ignored: /(^|[\/\\])\../})
       console.log("ranch-upload v0.0.1");
   })
   .on("add", path => {
-      if (READY)
+      if (READY && path.endsWith("_1"))
           process(path);
   });
 
