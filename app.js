@@ -11,7 +11,7 @@ const chokidar = require("chokidar");
 
 const TMP_DIR = "tmp";
 //const FOOTAGE_DIRECTORY = "/tmp/samples";
-const FOOTAGE_DIRECTORY = PATH.join("M:", "MediaDatabase");
+const FOOTAGE_DIRECTORY = PATH.join("E:", "MediaDatabase");
 
 console.log("dependencies loaded.");
 
