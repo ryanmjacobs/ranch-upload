@@ -1,4 +1,6 @@
 #!/usr/bin/env node
+console.log("ranch-upload v0.0.1");
+
 require("dotenv").config()
 const fs       = require("fs");
 const PATH     = require("path");
@@ -11,18 +13,14 @@ const TMP_DIR = "tmp";
 //const FOOTAGE_DIRECTORY = "/tmp/samples";
 const FOOTAGE_DIRECTORY = 'M:\MediaDatabase';
 
-/* sample upload
-const a = compress("sample.pic", "sample.mp4");
-const b = upload.test();
-Promise.all([a,b]).then(upload.clip("sample.mp4", "/sample.mp4"))
-*/
+console.log("dependencies loaded.");
 
 // start processing files
 READY = false;
 chokidar.watch(FOOTAGE_DIRECTORY, {ignored: /(^|[\/\\])\../})
   .on("ready", () => {
       READY = true;
-      console.log("ranch-upload v0.0.1");
+      console.log("ready.");
   })
   .on("add", path => {
       if (READY && path.endsWith("_1"))
