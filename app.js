@@ -25,9 +25,8 @@ chokidar.watch(FOOTAGE_GLOB, {
       console.log("ready.");
   })
   .on("add", path => {
-      console.log(path);
-    //if (READY)
-    //    process(path);
+      if (READY)
+          process(path);
   });
 
 async function process(path) {
