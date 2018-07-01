@@ -2,7 +2,7 @@ const fs       = require("fs");
 const PATH     = require("path");
 const chokidar = require("chokidar");
 
-const FOOTAGE_DIRECTORY = PATH.join("M:", "MediaDatabase");
+const FOOTAGE_DIRECTORY = PATH.join("E:", "MediaDatabase");
 
 READY = false;
 chokidar.watch(FOOTAGE_DIRECTORY, {ignored: /(^|[\/\\])\../})
