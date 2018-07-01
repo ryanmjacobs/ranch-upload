@@ -16,7 +16,10 @@ console.log("footage_glob: " + FOOTAGE_GLOB);
 
 // start processing files
 READY = false;
-chokidar.watch(FOOTAGE_GLOB, {usePolling: true})//, {ignored: /(^|[\/\\])\../})
+chokidar.watch(FOOTAGE_GLOB, {
+    usePolling: true,
+    ignoreInitial: true
+})
   .on("ready", () => {
       READY = true;
       console.log("ready.");
