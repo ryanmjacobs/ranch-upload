@@ -33,12 +33,15 @@ async function process(path) {
     console.log("new file: " + path);
 
     mkdirp.sync(TMP_DIR);
-    const dbx_path = path.replace(FOOTAGE_DIRECTORY, "").replace("pic", "mp4");
-    mkdirp.sync(PATH.dirname(TMP_DIR + dbx_path));
+    const dbx_path = path.replace("pic", "mp4");
 
-    await compress(path, TMP_DIR + dbx_path);
-    await upload.clip(TMP_DIR + dbx_path, dbx_path);
-    fs.unlink(TMP_DIR + dbx_path, function() {
-        console.log("removed: " + TMP_DIR + dbx_path);
+    const tmp_encode = PATH.join(TMP_DIR, dbx_path);
+
+    mkdirp.sync(PATH.dirname(tmp_encode));
+
+    await compress(path, tmp_encode);
+    await upload.clip(tmp_encode, dbx_path);
+    fs.unlink(tmp_encode, function() {
+        console.log("removed: " + tmp_encode);
     });
 }
