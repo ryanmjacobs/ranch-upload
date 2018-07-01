@@ -11,7 +11,7 @@ const chokidar = require("chokidar");
 console.log("dependencies loaded.");
 
 const TMP_DIR = "tmp";
-const FOOTAGE_GLOB = "\\MediaDatabase\\*_1\\**\\*.pic";
+const FOOTAGE_GLOB = "\\MediaDatabase\\**\\*.pic";
 console.log("footage_glob: " + FOOTAGE_GLOB);
 
 // start processing files
