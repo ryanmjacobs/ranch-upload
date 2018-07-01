@@ -17,10 +17,10 @@
   },
   "homepage": "https://github.com/ryanmjacobs/ranch-upload#readme",
   "dependencies": {
-    "chokidar": "^2.0.4",
     "dotenv": "^6.0.0",
     "dropbox": "^4.0.7",
     "fluent-ffmpeg": "^2.1.2",
+    "gaze": "^1.1.3",
     "isomorphic-fetch": "^2.2.1",
     "mkdirp": "^0.5.1"
   }
