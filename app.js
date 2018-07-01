@@ -22,8 +22,9 @@ chokidar.watch(FOOTAGE_GLOB, {ignored: /(^|[\/\\])\../})
       console.log("ready.");
   })
   .on("add", path => {
-      if (READY && path.includes("_1" + PATH.sep))
-          process(path);
+      console.log(path);
+    //if (READY)
+    //    process(path);
   });
 
 async function process(path) {
