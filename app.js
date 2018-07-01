@@ -33,7 +33,7 @@ async function process(path) {
     console.log("new file: " + path);
 
     mkdirp.sync(TMP_DIR);
-    const dbx_path = path.replace("pic", "mp4").replace("\\", "/");
+    const dbx_path = path.replace(/pic$/g, "mp4").replace(/\\/g, "/");
     console.log("dBX PATH", dbx_path);
     const tmp_encode = PATH.join(TMP_DIR, dbx_path);
 
