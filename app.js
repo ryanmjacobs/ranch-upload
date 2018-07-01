@@ -8,18 +8,15 @@ const mkdirp   = require("mkdirp");
 const upload   = require("./lib/upload");
 const compress = require("./lib/compress");
 const chokidar = require("chokidar");
+console.log("dependencies loaded.");
 
 const TMP_DIR = "tmp";
-//const FOOTAGE_DIRECTORY = "/tmp/samples";
-//const FOOTAGE_DIRECTORY = PATH.join("E:", "MediaDatabase");
-const FOOTAGE_DIRECTORY = PATH.join("/", "MediaDatabase");
-console.log(FOOTAGE_DIRECTORY);
-
-console.log("dependencies loaded.");
+const FOOTAGE_GLOB = "\\MediaDatabase\\*_1\\**\\*.pic";
+console.log("footage_glob: " + FOOTAGE_GLOB);
 
 // start processing files
 READY = false;
-chokidar.watch(FOOTAGE_DIRECTORY, {ignored: /(^|[\/\\])\../})
+chokidar.watch(FOOTAGE_GLOB, {ignored: /(^|[\/\\])\../})
   .on("ready", () => {
       READY = true;
       console.log("ready.");
